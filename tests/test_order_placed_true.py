@@ -34,21 +34,18 @@ class TestOrderButtonHeader:
         form_about_rent_page.click_button_order_placed_in_form()
         popup_want_to_place_an_order_page.click_button_yes()
         popup_order_placed_page.find_order_placed_label()
-        header_page.check_link_logo_scooter()
-        header_page.check_link_logo_yandex(driver)
-        assert driver.current_url == 'https://dzen.ru/?yredirect=true'
+        assert popup_order_placed_page.get_button_see_status_text() == "Посмотреть статус"
 
     @allure.title('Оформление заказа через кнопку Заказать в на главной странице')
     def test_order_placed_button_middle(self, driver):
         main_page = MainPageScooter(driver)
-        header_page = HeaderPageScooter(driver)
         form_the_scooter_for_page = TheScooterForPageScooter(driver)
         form_about_rent_page = AboutRentTheScooterPageScooter(driver)
         popup_want_to_place_an_order_page = PopupWantToPlacePageScooter(driver)
         popup_order_placed_page = PopupOrderPlacedPageScooter(driver)
         main_page.open_page(URL)
         main_page.click_button_confirm_cookie()
-        main_page.click_button_order_placed_middle(driver)
+        main_page.click_button_order_placed_middle()
         form_the_scooter_for_page.enter_name(NAME_SECOND)
         form_the_scooter_for_page.enter_surname(SURNAME_SECOND)
         form_the_scooter_for_page.enter_address(ADDRESS_SECOND)
@@ -60,9 +57,7 @@ class TestOrderButtonHeader:
         form_about_rent_page.click_button_order_placed_in_form()
         popup_want_to_place_an_order_page.click_button_yes()
         popup_order_placed_page.find_order_placed_label()
-        header_page.check_link_logo_scooter()
-        header_page.check_link_logo_yandex(driver)
-        assert driver.current_url == 'https://dzen.ru/?yredirect=true'
+        assert popup_order_placed_page.get_button_see_status_text() == "Посмотреть статус"
 
 
     @pytest.mark.parametrize('name,surname,address,phone',
@@ -74,14 +69,13 @@ class TestOrderButtonHeader:
 
     def test_order_placed_button_middle_with_options(self, name, surname, address, phone, driver):
         main_page = MainPageScooter(driver)
-        header_page = HeaderPageScooter(driver)
         form_the_scooter_for_page = TheScooterForPageScooter(driver)
         form_about_rent_page = AboutRentTheScooterPageScooter(driver)
         popup_want_to_place_an_order_page = PopupWantToPlacePageScooter(driver)
         popup_order_placed_page = PopupOrderPlacedPageScooter(driver)
         main_page.open_page(URL)
         main_page.click_button_confirm_cookie()
-        main_page.click_button_order_placed_middle(driver)
+        main_page.click_button_order_placed_middle()
         form_the_scooter_for_page.enter_name(name)
         form_the_scooter_for_page.enter_surname(surname)
         form_the_scooter_for_page.enter_address(address)
@@ -93,6 +87,4 @@ class TestOrderButtonHeader:
         form_about_rent_page.click_button_order_placed_in_form()
         popup_want_to_place_an_order_page.click_button_yes()
         popup_order_placed_page.find_order_placed_label()
-        header_page.check_link_logo_scooter()
-        header_page.check_link_logo_yandex(driver)
-        assert driver.current_url == 'https://dzen.ru/?yredirect=true'
+        assert popup_order_placed_page.get_button_see_status_text() == "Посмотреть статус"

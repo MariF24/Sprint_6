@@ -4,7 +4,7 @@ class ScootersLocators:
     # Кнопка подтверждения куков
     BUTTON_CONFIRM_COOKIE = [By.ID, 'rcc-confirm-button']
     # Кнопка Заказать на главной странице посередине
-    BUTTON_ORDER_PLACED_MIDDLE = [By.XPATH, '//div[contains(@class, "Home_FinishButton")]/button[contains(text(),"Заказать")]']
+    BUTTON_ORDER_PLACED_MIDDLE = [By.XPATH, '//button[contains(@class, "Button_Middle")]']
     # Вопрос № 1
     IMPORTANT_QUESTION_FIRST = [By.ID, 'accordion__heading-0']
     # Ответ № 1
@@ -78,5 +78,6 @@ class ScootersLocators:
     # Кнопка Далее
     BUTTON_FURTHER = [By.XPATH, '//div[contains(@class, "Order_NextButton")]/button[contains(text(),"Далее")]']
     # Кнопка Посмотреть статус
-    BUTTON_SEE_STATUS = [By.XPATH, '//button[contains(text(),"Посмотреть статус")]']
+    BUTTON_SEE_STATUS = [By.XPATH, '//button[(text() = "Посмотреть статус")]']
+
 

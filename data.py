@@ -1,4 +1,5 @@
 
+REDIRECT_DZEN = 'https://dzen.ru/?yredirect=true'
 NAME_FIRST = 'Николай'
 SURNAME_FIRST = 'Иванов'
 ADDRESS_FIRST = 'Москва, Красная площадь'
